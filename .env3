@@ -8,22 +8,22 @@
 #
 
 # XMPP component password for Jicofo
-JICOFO_COMPONENT_SECRET=
+JICOFO_COMPONENT_SECRET=b5a9ecb2a63769b5d0d011786e4a4afd
 
 # XMPP password for Jicofo client connections
-JICOFO_AUTH_PASSWORD=
+JICOFO_AUTH_PASSWORD=fd8a84990f3c764c573e7a87c40352c9
 
 # XMPP password for JVB client connections
-JVB_AUTH_PASSWORD=
+JVB_AUTH_PASSWORD=d2c1989f6332087fc63c76edbe4aee27
 
 # XMPP password for Jigasi MUC client connections
-JIGASI_XMPP_PASSWORD=
+JIGASI_XMPP_PASSWORD=669e41efd10eb98855bc4621a1ae09d3
 
 # XMPP recorder password for Jibri client connections
-JIBRI_RECORDER_PASSWORD=
+JIBRI_RECORDER_PASSWORD=e5c520c491fd9db97ca7676a357dbd8e
 
 # XMPP password for Jibri client connections
-JIBRI_XMPP_PASSWORD=
+JIBRI_XMPP_PASSWORD=49751bd897b24b29837261b470f43274
 
 
 #
