@@ -12,11 +12,13 @@ services:
             - ${CONFIG}/web:/config:Z
             - ${CONFIG}/web/letsencrypt:/etc/letsencrypt:Z
             - ${CONFIG}/transcripts:/usr/share/jitsi-meet/transcripts:Z
+            - ./plugins:/prosody-plugins-custom
         environment:
             - ENABLE_AUTH
             - ENABLE_GUESTS
             - ENABLE_LETSENCRYPT
             - ENABLE_HTTP_REDIRECT
+            - MUC_MAX_OCCUPANTS
             - ENABLE_TRANSCRIPTIONS
             - DISABLE_HTTPS
             - JICOFO_AUTH_USER
@@ -55,6 +57,7 @@ services:
         volumes:
             - ${CONFIG}/prosody/config:/config:Z
             - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom:Z
+            - ./plugins:/prosody-plugins-custom
         environment:
             - AUTH_TYPE
             - ENABLE_AUTH
@@ -62,6 +65,7 @@ services:
             - ENABLE_LOBBY
             - GLOBAL_MODULES
             - GLOBAL_CONFIG
+            - MUC_MAX_OCCUPANTS
             - LDAP_URL
             - LDAP_BASE
             - LDAP_BINDDN
