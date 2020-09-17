@@ -230,10 +230,10 @@ JVB_ENABLE_APIS=rest,colibri
 JICOFO_AUTH_USER=focus
 
 # Base URL of Jicofo's reservation REST API
-JICOFO_RESERVATION_REST_BASE_URL=http://reservation.meet9.gobrasa.org
+#JICOFO_RESERVATION_REST_BASE_URL=http://reservation.meet9.gobrasa.org
 
 # Enable Jicofo's health check REST API (http://<jicofo_base_url>:8888/about/health)
-JICOFO_ENABLE_HEALTH_CHECKS=true
+#JICOFO_ENABLE_HEALTH_CHECKS=true
 
 # XMPP user for Jigasi MUC client connections
 JIGASI_XMPP_USER=jigasi
