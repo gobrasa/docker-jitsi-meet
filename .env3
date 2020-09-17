@@ -31,7 +31,7 @@ JIBRI_XMPP_PASSWORD=49751bd897b24b29837261b470f43274
 #
 
 # Directory where all configuration will be stored
-CONFIG=jitsi-meet-cfg3
+CONFIG=~/.jitsi-meet-cfg
 
 # Exposed HTTP port
 HTTP_PORT=80
@@ -50,7 +50,7 @@ PUBLIC_URL=https://meet3.gobrasa.org
 #DOCKER_HOST_ADDRESS=192.168.1.1
 
 # Control whether the lobby feature should be enabled or not
-#ENABLE_LOBBY=1
+ENABLE_LOBBY=1
 
 #
 # Let's Encrypt configuration
@@ -60,7 +60,7 @@ PUBLIC_URL=https://meet3.gobrasa.org
 ENABLE_LETSENCRYPT=1
 
 # Domain for which to generate the certificate
-LETSENCRYPT_DOMAIN=meet3.example.com
+LETSENCRYPT_DOMAIN=meet3.gobrasa.org
 
 # E-Mail for receiving important account notifications (mandatory)
 LETSENCRYPT_EMAIL=tech@gobrasa.org
@@ -103,10 +103,10 @@ LETSENCRYPT_EMAIL=tech@gobrasa.org
 ENABLE_AUTH=1
 
 # Enable guest access
-#ENABLE_GUESTS=1
+ENABLE_GUESTS=1
 
 # Select authentication type: internal, jwt or ldap
-#AUTH_TYPE=internal
+AUTH_TYPE=internal
 
 # JWT authentication
 #
@@ -230,10 +230,10 @@ JVB_ENABLE_APIS=rest,colibri
 JICOFO_AUTH_USER=focus
 
 # Base URL of Jicofo's reservation REST API
-#JICOFO_RESERVATION_REST_BASE_URL=http://reservation.example.com
+JICOFO_RESERVATION_REST_BASE_URL=http://reservation.meet3.gobrasa.org
 
 # Enable Jicofo's health check REST API (http://<jicofo_base_url>:8888/about/health)
-#JICOFO_ENABLE_HEALTH_CHECKS=true
+JICOFO_ENABLE_HEALTH_CHECKS=true
 
 # XMPP user for Jigasi MUC client connections
 JIGASI_XMPP_USER=jigasi
