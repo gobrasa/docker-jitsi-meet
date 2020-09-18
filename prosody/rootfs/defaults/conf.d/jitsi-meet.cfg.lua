@@ -119,10 +119,16 @@ Component "{{ .Env.XMPP_INTERNAL_MUC_DOMAIN }}" "muc"
 
 Component "{{ .Env.XMPP_MUC_DOMAIN }}" "muc"
     storage = "memory"
+    {{ if .Env.MUC_MAX_OCCUPANTS }}
+    muc_max_occupants = .Env.MUC_MAX_OCCUPANTS
+    {{ end }}
     modules_enabled = {
         "muc_meeting_id";
         {{ if .Env.XMPP_MUC_MODULES }}
         "{{ join "\";\n\"" (splitList "," .Env.XMPP_MUC_MODULES) }}";
+        {{ end }}
+        {{ if .Env.MUC_MAX_OCCUPANTS }}
+        "muc_max_occupants";
         {{ end }}
         {{ if and $ENABLE_AUTH (eq $AUTH_TYPE "jwt") }}
         "{{ $JWT_TOKEN_AUTH_MODULE }}";
