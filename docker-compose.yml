@@ -12,7 +12,6 @@ services:
             - ${CONFIG}/web:/config:Z
             - ${CONFIG}/web/letsencrypt:/etc/letsencrypt:Z
             - ${CONFIG}/transcripts:/usr/share/jitsi-meet/transcripts:Z
-            - ./plugins:/prosody-plugins-custom
         environment:
             - ENABLE_AUTH
             - ENABLE_GUESTS
@@ -57,7 +56,6 @@ services:
         volumes:
             - ${CONFIG}/prosody/config:/config:Z
             - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom:Z
-            - ./plugins:/prosody-plugins-custom
         environment:
             - AUTH_TYPE
             - ENABLE_AUTH
