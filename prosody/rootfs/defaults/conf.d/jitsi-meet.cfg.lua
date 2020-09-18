@@ -119,27 +119,21 @@ Component "{{ .Env.XMPP_INTERNAL_MUC_DOMAIN }}" "muc"
 
 Component "{{ .Env.XMPP_MUC_DOMAIN }}" "muc"
     storage = "memory"
-    {{ if .Env.MUC_MAX_OCCUPANTS }}
-    "muc_max_occupants = {{ .Env.MUC_MAX_OCCUPANTS }}"
-    {{ end }}
+    muc_max_occupants = "{{ .Env.MUC_MAX_OCCUPANTS }}"
     modules_enabled = {
         "muc_meeting_id";
         {{ if .Env.XMPP_MUC_MODULES }}
         "{{ join "\";\n\"" (splitList "," .Env.XMPP_MUC_MODULES) }}";
         {{ end }}
-        {{ if .Env.MUC_MAX_OCCUPANTS }}
         "muc_max_occupants";
-        {{ end }}
         {{ if and $ENABLE_AUTH (eq $AUTH_TYPE "jwt") }}
         "{{ $JWT_TOKEN_AUTH_MODULE }}";
         {{ end }}
     }
-    {{ if .Env.MUC_MAX_OCCUPANTS }}
-    "muc_access_whitelist = { 
-        "recorder@{{ .Env.XMPP_DOMAIN }}";
-        "focus@{{ .Env.XMPP_AUTH_DOMAIN }}"; 
-    }"
-    {{ end }}
+    muc_access_whitelist = { 
+        recorder@"{{ .Env.XMPP_DOMAIN }}";
+        focus@"{{ .Env.XMPP_AUTH_DOMAIN }}"; 
+    }
     muc_room_cache_size = 1000
     muc_room_locking = false
     muc_room_default_public_jids = true
