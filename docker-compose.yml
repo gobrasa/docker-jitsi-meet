@@ -48,7 +48,7 @@ services:
 
     # XMPP server
     prosody:
-        image: jitsi/prosody:latest
+        image: gobrasa/prosody:latest
         restart: ${RESTART_POLICY}
         expose:
             - '5222'
@@ -57,6 +57,7 @@ services:
         volumes:
             - ${CONFIG}/prosody/config:/config:Z
             - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom:Z
+            - ./plugins:/prosody-gobrasa-plugins
         environment:
             - AUTH_TYPE
             - ENABLE_AUTH
