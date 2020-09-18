@@ -3,7 +3,7 @@ version: '3'
 services:
     # Frontend
     web:
-        image: jitsi/web:latest
+        image: gobrasa/web:latest
         restart: ${RESTART_POLICY}
         ports:
             - '${HTTP_PORT}:80'
@@ -116,7 +116,7 @@ services:
 
     # Focus component
     jicofo:
-        image: jitsi/jicofo:latest
+        image: gobrasa/jicofo:latest
         restart: ${RESTART_POLICY}
         volumes:
             - ${CONFIG}/jicofo:/config:Z
@@ -145,7 +145,7 @@ services:
 
     # Video bridge
     jvb:
-        image: jitsi/jvb:latest
+        image: gobrasa/jvb:latest
         restart: ${RESTART_POLICY}
         ports:
             - '${JVB_PORT}:${JVB_PORT}/udp'
