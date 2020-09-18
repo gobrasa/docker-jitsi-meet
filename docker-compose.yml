@@ -3,7 +3,7 @@ version: '3'
 services:
     # Frontend
     web:
-        image: gobrasa/web:latest
+        image: jitsi/web:latest
         restart: ${RESTART_POLICY}
         ports:
             - '${HTTP_PORT}:80'
@@ -48,7 +48,7 @@ services:
 
     # XMPP server
     prosody:
-        image: gobrasa/prosody:latest
+        image: jitsi/prosody:latest
         restart: ${RESTART_POLICY}
         expose:
             - '5222'
@@ -57,7 +57,6 @@ services:
         volumes:
             - ${CONFIG}/prosody/config:/config:Z
             - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom:Z
-            - ./plugins:/prosody-gobrasa-plugins
         environment:
             - AUTH_TYPE
             - ENABLE_AUTH
@@ -116,7 +115,7 @@ services:
 
     # Focus component
     jicofo:
-        image: gobrasa/jicofo:latest
+        image: jitsi/jicofo:latest
         restart: ${RESTART_POLICY}
         volumes:
             - ${CONFIG}/jicofo:/config:Z
@@ -145,7 +144,7 @@ services:
 
     # Video bridge
     jvb:
-        image: gobrasa/jvb:latest
+        image: jitsi/jvb:latest
         restart: ${RESTART_POLICY}
         ports:
             - '${JVB_PORT}:${JVB_PORT}/udp'
